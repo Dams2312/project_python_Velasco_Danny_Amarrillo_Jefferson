@@ -1,0 +1,1 @@
+#modulo que se encarga de la supervicion y coordinacion de los campers mediante los trainers y el coordinador
