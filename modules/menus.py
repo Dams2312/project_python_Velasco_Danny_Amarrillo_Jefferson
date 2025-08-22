@@ -31,4 +31,20 @@ def ingresar_menu():
     opcion = int(input())
     return opcion
 
+def registro_menu():
+    print("""
+    -------------------------------------------------
+                    REGISTRO 
+    -------------------------------------------------
+    1.registro camper
+    2.registro trainer
+    3.registro coordinador
+    4.salir
+    -------------------------------------------------
+    Elija una opcion:
+    """
+    ,end="")
+    opcion = int(input())
+    return opcion
+
 
