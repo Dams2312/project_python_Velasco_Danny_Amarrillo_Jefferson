@@ -1,5 +1,6 @@
 #modulo encargado de gestionar las notas de los estudiantes
 
+# funcion para corregir con ciclos while y exeptions de try y execpts
 def registrar_nota():
     print("""
     -------------------------------------------------
