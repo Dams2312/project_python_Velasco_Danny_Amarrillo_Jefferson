@@ -48,3 +48,22 @@ def registro_menu():
     return opcion
 
 
+def menu_coordinador():
+    print("""
+    -------------------------------------------------
+                BIENVENIDO OTRA VES
+    -------------------------------------------------
+    1.Ver aspirantes
+    2.Agregar nota a aspirantes
+    3.Campers aceptados
+    4.Ver trainers
+    5.Ver campers con bajo rendimiento
+    6.Ver rutas 
+    7.modulo de la ruta
+    8.salir
+    -------------------------------------------------
+    Elija una opcion:   
+    """
+    ,end="")
+    opcion = int(input())
+    return opcion
