@@ -38,9 +38,11 @@ if __name__ == "__main__":
                         case 4:
                             print("saliendo")
                             continue
-
                 case 3:
                     print("Gracias por usar el programa. ¡Hasta luego!")
                     break
+                case _:
+                    print("opcion invalida intente otra ves.")
+                    continue
         except ValueError:
             pass

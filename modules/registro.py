@@ -5,7 +5,8 @@ from typing import Dict
 
 #enlace con los archivos de registro json
 procesos = "data/procesos.json"
-rute_train_cord = "data/traeiner_cordinador.json"
+rute_train = "data/trainer.json"
+rute_coordinador = "data/coordinador"
 
 # Funciones para el registro de campers
 def registro_camper()-> None:
@@ -104,7 +105,7 @@ def registro_trainer()-> None:
             print ("experiencia (en meses): ", end="")
             experiencia = int(input())
             
-            leer_trainer = read_json(rute_train_cord)
+            leer_trainer = read_json(rute_train)
             
             if identificacion in leer_trainer:
                 print("El trainer con esta identificación ya está registrado.")
@@ -120,7 +121,7 @@ def registro_trainer()-> None:
                 "identificacion": identificacion,
                 "experiencia": experiencia
             }
-                write_json(rute_train_cord, Registro_trainer)
+                write_json(rute_train, Registro_trainer)
             
             print(f"""
             -------------------------------------------------
@@ -145,8 +146,8 @@ def registro_coordinador()-> None:
     while True:
         try:
             #LIBRERIAS PARA EL REGISTRO DE TRAINERS Y COORDINADORES
-            proceso_trainer = {}
-            Registro_trainer = {}
+            proceso_coordinador = {}
+            Registro_coordinador = {}
             os.system("cls")
             print("""
             -------------------------------------------------
@@ -168,14 +169,14 @@ def registro_coordinador()-> None:
             print ("experiencia (en meses): ", end="")
             experiencia = int(input()) 
             
-            coordinador = read_json(rute_train_cord)
+            coordinador = read_json(rute_coordinador)
             
             if identificacion in coordinador:
                 print("El coordinador con esta identificación ya está registrado.")
                 continue
             else:
-                Registro_trainer.update({str(identificacion): proceso_trainer})
-                proceso_trainer = {
+                Registro_coordinador.update({str(identificacion): proceso_coordinador})
+                proceso_coordinador = {
                 "nombre": nombre,
                 "apellido": apellido,
                 "edad": edad,
@@ -184,7 +185,7 @@ def registro_coordinador()-> None:
                 "identificacion": identificacion,
                 "experiencia": experiencia
             }
-                write_json(rute_train_cord, Registro_trainer)
+                write_json(rute_coordinador, Registro_coordinador)
     
             print(f"""
             -------------------------------------------------

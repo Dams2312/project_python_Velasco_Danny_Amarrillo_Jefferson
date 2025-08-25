@@ -67,3 +67,22 @@ def menu_coordinador():
     ,end="")
     opcion = int(input())
     return opcion
+
+def menu_trainer():
+    print("""
+    -------------------------------------------------
+                BIENVENIDO OTRA VES
+    -------------------------------------------------
+    1.Ver campers
+    2.Agregar notas a camper
+    3.Ruta a seguir
+    4.Ver promedio del grupo
+    5.Ver campers con bajo rendimiento
+    6.Ver campers con alto rendimiento
+    7.salir
+    -------------------------------------------------
+    Elija una opcion:   
+    """
+    ,end="")
+    opcion = int(input())
+    return opcion
