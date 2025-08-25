@@ -86,3 +86,53 @@ def menu_trainer():
     ,end="")
     opcion = int(input())
     return opcion
+
+def menu_camper():
+    print("""
+    -------------------------------------------------
+                BIENVENIDO OTRA VES
+    -------------------------------------------------
+    1.Ver notas
+    2.Ver promedio
+    3.Ver ruta 
+    4.Ver trainer asignado
+    5.ver promedio del grupo
+    6.ver mi estado
+    7.salir
+    -------------------------------------------------
+    Elija una opcion:   
+    """
+    ,end="")
+    opcion = int(input())
+    return opcion
+def notas ():
+    print("""
+    -------------------------------------------------
+                MODULO DE NOTAS
+    -------------------------------------------------
+    1.Registrar nota practica
+    2.registrar nota teorica
+    3.registrar nota quices
+    4.Salir
+    -------------------------------------------------
+    Elija una opcion:   
+    """
+    ,end="")
+    opcion = int(input())
+    return opcion
+
+def ruta_seguir():
+    print("""
+    -------------------------------------------------
+                AGREGAR NOTA AL MODULO
+    -------------------------------------------------
+    1.modulo 1.
+    2.modulo 2.
+    3.modulo 3.
+    4.salir
+    -------------------------------------------------
+    Elija una opcion:   
+    """
+    ,end="")
+    opcion = int(input())
+    return opcion
