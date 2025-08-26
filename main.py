@@ -9,6 +9,8 @@ import json
 from typing import List, Dict
 import modules.menus as mn
 import modules.registro as re
+import modules.estudiantes as es
+import modules.trainer_cordinador as tc
 
 if __name__ == "__main__":
     while True:
@@ -18,13 +20,13 @@ if __name__ == "__main__":
                     match mn.ingresar_menu():
                         case 1:
                             print("Ingresando como camper...")
-                            # Aquí iría la lógica para ingresar como camper
+                            es.ver_notas()
                         case 2:
                             print("Ingresando como trainer...")
-                            # Aquí iría la lógica para ingresar como trainer
+                            tc.trainer_campus()
                         case 3:
                             print("Ingresando como coordinador...")
-                            # Aquí iría la lógica para ingresar como coordinador
+                            tc.coordinador()
                         case 4:
                             continue
                 case 2:

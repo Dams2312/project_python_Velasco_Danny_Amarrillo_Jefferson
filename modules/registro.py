@@ -2,6 +2,7 @@
 import os
 import json
 from typing import Dict
+import modules.rutas as ru
 
 #enlace con los archivos de registro json
 procesos = "data/procesos.json"
@@ -45,6 +46,11 @@ def registro_camper()-> None:
                 print("El camper con esta identificación ya está registrado.")
                 continue
             else:
+                rutas_disponibles = ru.rutuaestudios()
+                total_rutas = list(rutas_disponibles.keys())
+                total_camper = len(registrar_camper)
+                indice_ruta = (total_camper // 33) % len(total_rutas)
+                nombre_ruta = total_rutas[indice_ruta]
                 Registro_camper.update({str(identificacion): proceso_estudent})
                 proceso_estudent = {
                 "nombre": nombre,
@@ -54,7 +60,10 @@ def registro_camper()-> None:
                 "telefono": telefono,
                 "direccion": direccion,
                 "acudiente": acudiente,
-                "identificacion": identificacion
+                "identificacion": identificacion,
+                "ruta_estudio" : {
+                    nombre_ruta: rutas_disponibles[nombre_ruta]
+            }
             }
                 write_json(procesos, Registro_camper)
             
@@ -75,6 +84,7 @@ def registro_camper()-> None:
             
         except ValueError:
             print("Error en el ingreso de datos. Por favor, intente de nuevo.")
+
 
 # Funciones para el registro de trainers 
 def registro_trainer()-> None:
@@ -110,7 +120,20 @@ def registro_trainer()-> None:
             if identificacion in leer_trainer:
                 print("El trainer con esta identificación ya está registrado.")
                 continue
+            
+            
             else:
+                rutas_disponibles = ru.rutuaestudios()
+                total_rutas = list(rutas_disponibles.keys())
+                total_trainers = len(leer_trainer)
+                indice_ruta = total_trainers % len(total_rutas)
+                nombre_ruta = total_rutas[indice_ruta]
+                ruta_asignada = {
+                    "ruta_asignada": {
+                    nombre_ruta: rutas_disponibles[nombre_ruta]
+                    }
+                }
+                proceso_trainer.update(ruta_asignada)
                 Registro_trainer.update({str(identificacion): proceso_trainer})
                 proceso_trainer = {
                 "nombre": nombre,
@@ -120,7 +143,9 @@ def registro_trainer()-> None:
                 "telefono": telefono,
                 "identificacion": identificacion,
                 "experiencia": experiencia
+                
             }
+                
                 write_json(rute_train, Registro_trainer)
             
             print(f"""

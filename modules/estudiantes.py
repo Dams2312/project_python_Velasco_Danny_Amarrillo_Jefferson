@@ -8,28 +8,37 @@ import modules.registro as re
 rute = "data/estudiantes.json"
 
 #funcion para ver las notas del estudiante
-def ver_notas(identificacion: str) -> None:
-    registros = re.read_json(rute)
-    estudiante = registros.get(identificacion)
+def ver_notas() -> None:
+    while True:
+        try:
+            os.system("cls")
+            registros = re.read_json(rute)
+            estudiante = input("Ingrese su número de identificación para ver sus notas: ")
     
-    if not estudiante or 'notas' not in estudiante:
-        print("No se encontraron notas para este estudiante.")
-        return
+            if not estudiante or 'notas' not in estudiante:
+                print("No se encontraron notas para este estudiante.")
+        
     
-    notas = estudiante['notas']
-    print(f"""
-    -------------------------------------------------
-                    NOTAS DEL ESTUDIANTE 
-    -------------------------------------------------
-    Notas de {estudiante['nombre']} {estudiante['apellido']}:
-    """)
+            notas = estudiante['notas']
+            print(f"""
+            -------------------------------------------------
+                        NOTAS DEL ESTUDIANTE 
+            -------------------------------------------------
+            Notas de {estudiante['nombre']} {estudiante['apellido']}:
+            """)
     
-    total = 0
-    for asignatura, nota in notas.items():
-        print(f"- {asignatura}: {nota}")
-        total += nota
+            total = 0
+            for asignatura, nota in notas.items():
+                print(f"- {asignatura}: {nota}")
+                total += nota
     
-    promedio = total / len(notas) if notas else 0
-    print(f"Promedio: {promedio:.2f}")
-    print("-------------------------------------------------")
+                promedio = total / len(notas) if notas else 0
+                print(f"Promedio: {promedio:.2f}")
+                print("-------------------------------------------------")
+            print("desea mirarar notas de otro estudiante? (s/n): ", end="")
+            resp = input().lower()
+            if resp != 's':
+                break
+        except ValueError:
+            print("Error: Entrada inválida. Por favor, ingrese un número.")
 
