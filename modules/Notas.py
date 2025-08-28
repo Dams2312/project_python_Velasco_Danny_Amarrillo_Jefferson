@@ -4,8 +4,8 @@
 import os
 import json
 from typing import List, Dict
-import modules.registro as re
-import modules.menus as mn
+import registro as re
+import menus as mn
 
 rute = "data/estudiantes.json"
 

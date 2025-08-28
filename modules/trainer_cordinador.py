@@ -2,8 +2,8 @@
 import os
 import json
 from typing import List,Dict
-import modules.menus as mn
-import modules.registro as re 
+import menus as mn
+import registro as re 
 rute_trainer = "data/trainer.json"
 rute_coordinador = "data/coordinador.json"
 rute_aspirante = "data/proceso.json"

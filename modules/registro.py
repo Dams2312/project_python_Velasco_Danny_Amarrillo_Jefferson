@@ -2,7 +2,7 @@
 import os
 import json
 from typing import Dict
-import modules.rutas as ru
+import rutas as ru
 
 #enlace con los archivos de registro json
 procesos = "data/procesos.json"

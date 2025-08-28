@@ -11,6 +11,8 @@ import modules.menus as mn
 import modules.registro as re
 import modules.estudiantes as es
 import modules.trainer_cordinador as tc
+import modules.examen_jefferson_amarillo as ex
+from data import trainer as TR
 
 if __name__ == "__main__":
     while True:
@@ -48,3 +50,9 @@ if __name__ == "__main__":
                     continue
         except ValueError:
             pass
+
+if ex.triner_Rut in TR:
+    print("ested pronto accedera a ud ruta y se le seleccionara un salon en cuanto hayan los suficientes estudiantes ")
+
+else:
+    print("usted no esta registrado como trainer o su contraseña es erronea")
